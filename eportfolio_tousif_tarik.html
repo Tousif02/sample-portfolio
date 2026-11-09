@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tousif Tarik | AI/ML Engineer Portfolio</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a237e;
+            --primary-light: #283593;
+            --primary-dark: #0d1445;
+            --accent: #e65100;
+            --accent-light: #ff6f00;
+            --text: #212121;
+            --text-light: #616161;
+            --bg: #f0f2f5;
+            --white: #ffffff;
+            --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            --radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffab40;
+}
+
+.logo span {
+    color: #ffab40;
+}
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        nav a {
+            padding: 7px 13px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 3px;
+        }
+
+        /* ===== MAIN ===== */
+        main {
+            padding: 30px 0 10px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 25px 28px;
+            margin-bottom: 22px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: var(--primary-light);
+            font-size: 17px;
+            margin-top: 14px;
+            margin-bottom: 6px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .card ul li {
+            margin-bottom: 4px;
+        }
+
+        .card p {
+            margin-bottom: 8px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            padding: 20px 0 5px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+
+        .hero-content .tagline {
+            font-size: 18px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .hero-content p {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-bottom: 18px;
+            max-width: 520px;
+        }
+
+        .hero-image {
+            flex: 0 0 150px;
+            text-align: center;
+        }
+
+        .hero-image .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: 700;
+            margin: 0 auto;
+            box-shadow: 0 6px 25px rgba(26, 35, 126, 0.2);
+            overflow: hidden;
+        }
+
+        .hero-image .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 26px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(26, 35, 126, 0.25);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background: #bf360c;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .btn-small {
+            padding: 7px 16px;
+            font-size: 13px;
+        }
+
+        /* ===== STATS ===== */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 12px;
+            margin: 15px 0 20px;
+        }
+
+        .stat-box {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 16px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-box .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-box .label {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-cat {
+            background: var(--bg);
+            padding: 15px 18px;
+            border-radius: var(--radius);
+            border-left: 3px solid var(--accent);
+        }
+
+        .skill-cat h3 {
+            color: var(--primary);
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .skill-cat ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-cat ul li {
+            padding: 2px 0;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .skill-cat ul li::before {
+            content: "▸ ";
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* ===== PUBLICATIONS ===== */
+        .pub-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pub-item:last-child {
+            border-bottom: none;
+        }
+
+        .pub-item .title {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .pub-item .venue {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        .pub-item .status {
+            display: inline-block;
+            padding: 1px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 3px;
+        }
+
+        .status-pub {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        .status-review {
+            background: #fff3e0;
+            color: #e65100;
+        }
+        .status-acc {
+            background: #e3f2fd;
+            color: #0d47a1;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-item .icon {
+            font-size: 22px;
+            width: 40px;
+            height: 40px;
+            background: var(--bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .contact-item .label {
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .contact-item .value {
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        /* ===== REFERENCES ===== */
+        .ref {
+            padding: 14px;
+            background: var(--bg);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+        }
+
+        .ref .name {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .ref .designation {
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        .ref .email {
+            color: var(--primary-light);
+            font-size: 13px;
+        }
+
+        /* ===== VIDEO ===== */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius);
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-fallback {
+            background: var(--bg);
+            border-radius: var(--radius);
+            padding: 30px 20px;
+            text-align: center;
+            border: 2px dashed #ccc;
+        }
+
+        .video-fallback .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .video-fallback p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* ===== INTERESTS ===== */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .interest-item {
+            background: var(--bg);
+            padding: 14px;
+            border-radius: var(--radius);
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .interest-item .icon {
+            font-size: 28px;
+            margin-bottom: 4px;
+        }
+
+        .interest-item .name {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 14px;
+        }
+
+        /* ===== ACTIVITIES ===== */
+        .act-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .act-item:last-child {
+            border-bottom: none;
+        }
+
+        .act-item .act-title {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .act-item .act-detail {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 35px;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #ffab40;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-content p {
+                margin: 0 auto 15px;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 4px;
+                padding-top: 12px;
+            }
+            nav.open {
+                display: flex;
+            }
+            nav a {
+                padding: 8px 14px;
+                width: 100%;
+                text-align: center;
+                font-size: 14px;
+            }
+            .hero-content h1 {
+                font-size: 28px;
+            }
+            .hero-content .tagline {
+                font-size: 16px;
+            }
+            .hero-image .avatar {
+                width: 120px;
+                height: 120px;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .card {
+                padding: 18px;
+            }
+            .interests-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-box .number {
+                font-size: 22px;
+            }
+            .hero-image .avatar {
+                width: 100px;
+                height: 100px;
+            }
+            .btn {
+                padding: 8px 18px;
+                font-size: 13px;
+            }
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="container header-content">
+        <div class="logo">TOUSIF <span>TARIK</span></div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#video">Intro Video</a>
+            <a href="#resume">Resume</a>
+            <a href="#publications">Publications</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#activities">Activities</a>
+            <a href="#interests">Interests</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+
+        <!-- ===== HOME ===== -->
+        <section id="home">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1>Tousif Tarik</h1>
+                        <p class="tagline">AI/ML Engineer | NLP Researcher | Published Author</p>
+                        <p>
+                            Final-semester Computer Science and Engineering student at AIUB with published research in
+                            applied ML, NLP, Computer Vision and deep learning architectures. <strong>  8 research publications</strong>
+                            including <strong>Nature Springer</strong> and <strong>Elsevier</strong>.
+                        </p>
+                        <div class="btn-group">
+                            <a href="#resume" class="btn">View Resume</a>
+                            <a href="#video" class="btn btn-accent">Watch Intro</a>
+                            <a href="#contact" class="btn">Contact Me</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="avatar">
+                            <img src="https://lh3.googleusercontent.com/d/1HNFvQAEv41058BviN4Q9prDCW2seAmuW=s500" alt="Tousif Tarik" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="number">8</div>
+                        <div class="label">Publications</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">3</div>
+                        <div class="label">Published Papers</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">2</div>
+                        <div class="label">Journal Papers</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">3.86</div>
+                        <div class="label">CGPA</div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="card">
+                    <h2>Quick Links</h2>
+                    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;">
+                        <a href="#about" class="btn btn-small">About</a>
+                        <a href="#video" class="btn btn-small btn-accent">Intro Video</a>
+                        <a href="#resume" class="btn btn-small">Resume</a>
+                        <a href="#publications" class="btn btn-small">Publications</a>
+                        <a href="#projects" class="btn btn-small">Projects</a>
+                        <a href="#contact" class="btn btn-small">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+        <section id="about">
+            <div class="container">
+                <h1 class="section-title">About Me</h1>
+                <p class="section-subtitle">Get to know me and my journey</p>
+
+                <div class="card">
+                    <h2>Professional Bio</h2>
+                    <p>
+                        I am a final-semester Computer Science and Engineering student at American International
+                        University-Bangladesh (AIUB) with a strong academic record (CGPA: 3.86/4.00). My academic
+                        journey has been driven by a deep passion for machine learning, natural language processing,
+                        and artificial intelligence.
+                    </p>
+                    <p>
+                        I have co-authored <strong>8 research publications</strong>, including 3 published conference papers
+                        (IEEE QPAIN 2026), 2 journal papers accepted in <strong>Nature Springer</strong> and
+                        <strong>Elsevier</strong> (awaiting publication), and 3 papers currently under review for
+                        the 4th International Conference on Computing Advancements (ICCA 2026).
+                    </p>
+                    <p>
+                        Beyond academia, I have participated in the <strong>International Collegiate Programming Contest (ICPC)</strong>,
+                        which has sharpened my algorithmic thinking and problem-solving abilities. I also serve as a
+                        <strong>Research Assistant (RA)</strong> at the UCHRG Lab under Dr. Kamruddin Nur and am an active
+                        member of the Computer Club at AIUB.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2>Career Objective</h2>
+                    <blockquote style="font-style:italic;color:var(--text-light);padding:14px 18px;background:var(--bg);border-radius:6px;border-left:4px solid var(--accent);">
+                        "Final-year Computer Science and Engineering student with hands-on experience in data analysis,
+                        machine learning, and published research in applied ML, NLP, and deep learning architectures.
+                        Seeking a challenging role where I can apply strong expertise in Python, R, SQL, data visualization,
+                        ML/NLP pipelines, model evaluation frameworks, and probabilistic modeling to solve real-world
+                        problems and build intelligent, production-ready systems."
+                    </blockquote>
+                </div>
+
+                <div class="card">
+                    <h2>Personal Information</h2>
+                    <ul style="list-style:none;padding:0;">
+                        <li><strong>Father's Name:</strong> Sk. Tarikul Islam</li>
+                        <li><strong>Mother's Name:</strong> Mst. Arifa Khanam</li>
+                        <li><strong>Blood Group:</strong> O+ve</li>
+                        <li><strong>Nationality:</strong> Bangladeshi</li>
+                        <li><strong>Gender:</strong> Male</li>
+                        <li><strong>Religion:</strong> Islam</li>
+                        <li><strong>Marital Status:</strong> Single</li>
+                        <li><strong>Permanent Address:</strong> Village: Mulassree, Union: Pahardanda, Police Station: Naragati, Upazila: Kalia, District: Narail</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Languages</h2>
+                    <ul>
+                        <li><strong>Bengali:</strong> Native/Fluent</li>
+                        <li><strong>English:</strong> Fluent (Reading, Writing, Speaking)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+<!-- ===== VIDEO SECTION ===== -->
+<section id="video">
+    <div class="container">
+        <h1 class="section-title">Introduction Video</h1>
+        <p class="section-subtitle">A brief introduction about myself and my work</p>
+
+        <div class="card">
+            <h2>My Introduction</h2>
+            <p style="color:var(--text-light);font-size:14px;margin-bottom:15px;">
+                Watch my introduction video to learn more about my background, research, and career aspirations.
+            </p>
+
+            <div class="video-wrapper">
+                <iframe
+                    src="https://drive.google.com/file/d/1rm5VJnrZQOyKp23IPcGxnJKuiwXHEvK3/preview"
+                    allow="autoplay"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p style="margin-top:12px;font-size:13px;color:var(--text-light);">
+                <strong>Video Link:</strong> If the video does not load, 
+                <a href="https://drive.google.com/file/d/1rm5VJnrZQOyKp23IPcGxnJKuiwXHEvK3/view" target="_blank" style="color:var(--accent);">watch it on Google Drive</a>.
+            </p>
+        </div>
+    </div>
+</section>
+
+        <!-- ===== RESUME ===== -->
+        <section id="resume">
+            <div class="container">
+                <h1 class="section-title">Resume / CV</h1>
+                <p class="section-subtitle">
+                    <a href="#" style="color:var(--accent);font-weight:600;">Download PDF Version</a>
+                </p>
+
+                <div class="card" style="text-align:center;">
+                    <h1 style="font-size:30px;color:var(--primary);">TOUSIF TARIK</h1>
+                    <p style="color:var(--text-light);font-size:14px;">
+                        House No. 32, Middle Paikpara, Mirpur-1, Dhaka-1216 |
+                        +880 1976-899520 |
+                        tousiftarik02@gmail.com
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2>Education</h2>
+                    <ul>
+                        <li>
+                            <strong>BSc in Computer Science and Engineering (CSE)</strong> –
+                            American International University-Bangladesh (AIUB) |
+                            2023 - Present (9th Semester, Ongoing) |
+                            CGPA: 3.86 / 4.00
+                        </li>
+                        <li>
+                            <strong>Higher Secondary Certificate (HSC)</strong> –
+                            BCIC College, Dhaka |
+                            2020 - 2022 |
+                            GPA: 5.00 / 5.00
+                        </li>
+                        <li>
+                            <strong>Secondary School Certificate (SSC)</strong> –
+                            Birshreshtha Noor Mohammad Public College, Dhaka |
+                            2018 - 2020 |
+                            GPA: 5.00 / 5.00
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Technical Skills</h2>
+                    <ul>
+                        <li><strong>ML/DL Frameworks:</strong> PyTorch, HuggingFace Transformers, scikit-learn, TensorFlow</li>
+                        <li><strong>NLP & LLMs:</strong> Text Classification, Entity Extraction, Semantic Similarity, Transformer Architectures (BERT, RoBERTa, DistilBERT, ALBERT, ELECTRA, XLNet, MiniLM), Prompt Engineering</li>
+                        <li><strong>Programming:</strong> Python, R, SQL, Latex, Java, JavaScript, MATLAB</li>
+                        <li><strong>Data Science:</strong> Exploratory Data Analysis, Feature Engineering, Data Preprocessing, Model Evaluation, Probabilistic Modeling</li>
+                        <li><strong>MLOps & Tools:</strong> Google Colab, RStudio, Git, Jupyter Notebooks</li>
+                        <li><strong>Visualization:</strong> Power BI, Tableau, Matplotlib, Seaborn, R Markdown</li>
+                        <li><strong>Web Development:</strong> React.js, Node.js, HTML/CSS</li>
+                        <li><strong>Additional:</strong> Microsoft Office Suite, Signal Processing, Ethical Hacking Fundamentals</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Additional Courses</h2>
+                    <ul>
+                        <li><strong>Graphics Design with UI/UX Design for Web Application</strong></li>
+                        <li><strong>CISCO Networking Fundamentals</strong></li>
+                        <li><strong>App Development (JAVA)</strong></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Research Publications</h2>
+                    <h3>Conference Papers (Published)</h3>
+                    <ul>
+                        <li><strong>"An Interpretable Hybrid Ensemble Framework for Medium-Term Electricity Demand Forecasting in Urban Power Systems"</strong> – IEEE QPAIN 2026</li>
+                        <li><strong>"A Comparative Analysis of BiLSTM, CNN-BiLSTM, and Transformer Models for Bangla Sentiment Analysis"</strong> – IEEE QPAIN 2026</li>
+                        <li><strong>"Two-Phase Fine-Tuning and Systematic Benchmarking Framework of Pneumonia Detection with Optimized DenseNet201"</strong> – IEEE QPAIN 2026</li>
+                    </ul>
+                    <h3>Conference Papers (Submitted - Under Review)</h3>
+                    <ul>
+                        <li>Three papers submitted to the <strong>4th International Conference on Computing Advancements (ICCA 2026)</strong>, Dhaka, Bangladesh, October 15–16, 2026</li>
+                    </ul>
+                    <h3>Journal Publications (Accepted - Awaiting Publication)</h3>
+                    <ul>
+                        <li><strong>"Robust Detection of AI-Generated and Paraphrased Text Using a RAPID RoBERTA Framework-SATO"</strong> – Accepted in <strong>Elsevier</strong></li>
+                        <li><strong>"Enhanced power demand forecasting for Bangladesh: using feature engineering associated with environmental and economic impact"</strong> – Accepted in <strong>Nature Springer</strong></li>
+                    </ul>
+                    <p style="margin-top:10px;">
+                        <strong>Research Profiles:</strong><br>
+                        <a href="https://www.researchgate.net/profile/Tousif-Tarik" style="color:var(--accent);" target="_blank">ResearchGate</a> |
+                        <a href="https://scholar.google.com/citations?user=Ze5zeEYAAAAJ" style="color:var(--accent);" target="_blank">Google Scholar</a> |
+                        <a href="https://ieeexplore.ieee.org/author/145426988909344" style="color:var(--accent);" target="_blank">IEEE Xplore</a>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2>Academic Projects</h2>
+                    <ul>
+                        <li><strong>Employee Salary Data Analysis</strong> – R, R Markdown, EDA | 2026 <br>
+                            <span style="font-size:13px;color:var(--text-light);">Carried a 1-million row employee salary dataset through full data-science lifecycle</span></li>
+                        <li><strong>Comparative Study of Transformer Models for AI-Text Detection</strong> – Python, PyTorch, HuggingFace Transformers, Google Colab | 2026 <br>
+                            <span style="font-size:13px;color:var(--text-light);">Benchmarked seven transformer architectures plus RoBERTa for AI-text detection</span></li>
+                        <li><strong>Signal Analysis in MATLAB</strong> – MATLAB, Signal Processing | 2026 <br>
+                            <span style="font-size:13px;color:var(--text-light);">Composite sinusoid generation, FFT spectrum analysis, uniform quantization</span></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Extra-Curricular Activities</h2>
+                    <ul>
+                        <li><strong>Research Assistant (RA)</strong> – UCHRG Lab, AIUB (Dr. Kamruddin Nur)</li>
+                        <li><strong>Active Member</strong> – Computer Club, AIUB</li>
+                        <li><strong>Participant</strong> – Socio-economic festival focused on cultivating next-generation leadership</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Achievements</h2>
+                    <ul>
+                        <li>Dean's List / Academic Excellence (CGPA: 3.86/4.00)</li>
+                        <li>Published Researcher: 3 conference papers, 2 journal papers accepted (Springer, Elsevier), 3 papers under review</li>
+                        <li>ICPC Participant: International Collegiate Programming Contest</li>
+                        <li>AI/ML Enthusiast: Active engagement with cutting-edge NLP and deep learning research</li>
+                        <li>Technical Communicator: Experience documenting complex technical concepts in formal research papers</li>
+                    </ul>
+                </div>
+
+                
+            </div>
+        </section>
+
+        <!-- ===== PUBLICATIONS ===== -->
+        <section id="publications">
+            <div class="container">
+                <h1 class="section-title">Research Publications</h1>
+                <p class="section-subtitle">A complete list of my research work</p>
+
+                <div class="card">
+                    <h2>Conference Papers (Published)</h2>
+                    <p style="color:var(--text-light);font-size:13px;margin-bottom:12px;">
+                        Co-author of three papers presented at the <strong>2026 IEEE QPAIN 2026</strong>,
+                        Chattogram, Bangladesh, April 2026
+                    </p>
+                    <div class="pub-item">
+                        <div class="title">"An Interpretable Hybrid Ensemble Framework for Medium-Term Electricity Demand Forecasting in Urban Power Systems"</div>
+                        <div class="venue">IEEE QPAIN 2026</div>
+                        <span class="status status-pub">Published</span>
+                    </div>
+                    <div class="pub-item">
+                        <div class="title">"A Comparative Analysis of BiLSTM, CNN-BiLSTM, and Transformer Models for Bangla Sentiment Analysis"</div>
+                        <div class="venue">IEEE QPAIN 2026</div>
+                        <span class="status status-pub">Published</span>
+                    </div>
+                    <div class="pub-item">
+                        <div class="title">"Two-Phase Fine-Tuning and Systematic Benchmarking Framework of Pneumonia Detection with Optimized DenseNet201"</div>
+                        <div class="venue">IEEE QPAIN 2026</div>
+                        <span class="status status-pub">Published</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Conference Papers (Submitted - Under Review)</h2>
+                    <p style="color:var(--text-light);font-size:13px;margin-bottom:12px;">
+                        Three papers submitted to the <strong>4th International Conference on Computing Advancements (ICCA 2026)</strong>,
+                        Dhaka, Bangladesh, October 15–16, 2026
+                    </p>
+                    <div class="pub-item">
+                        <div class="title">[Paper Title 1]</div>
+                        <div class="venue">ICCA 2026</div>
+                        <span class="status status-review">Under Review</span>
+                    </div>
+                    <div class="pub-item">
+                        <div class="title">[Paper Title 2]</div>
+                        <div class="venue">ICCA 2026</div>
+                        <span class="status status-review">Under Review</span>
+                    </div>
+                    <div class="pub-item">
+                        <div class="title">[Paper Title 3]</div>
+                        <div class="venue">ICCA 2026</div>
+                        <span class="status status-review">Under Review</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Journal Publications (Accepted - Awaiting Publication)</h2>
+                    <div class="pub-item">
+                        <div class="title">"Robust Detection of AI-Generated and Paraphrased Text Using a RAPID RoBERTA Framework-SATO"</div>
+                        <div class="venue">Elsevier</div>
+                        <span class="status status-acc">Accepted</span>
+                    </div>
+                    <div class="pub-item">
+                        <div class="title">"Enhanced power demand forecasting for Bangladesh: using feature engineering associated with environmental and economic impact"</div>
+                        <div class="venue">Nature Springer</div>
+                        <span class="status status-acc">Accepted</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Research Profiles</h2>
+                    <p>
+                        <a href="https://www.researchgate.net/profile/Tousif-Tarik" target="_blank" style="color:var(--accent);font-weight:600;">ResearchGate</a>
+                        &nbsp;|&nbsp;
+                        <a href="https://scholar.google.com/citations?user=Ze5zeEYAAAAJ" target="_blank" style="color:var(--accent);font-weight:600;">Google Scholar</a>
+                        &nbsp;|&nbsp;
+                        <a href="https://ieeexplore.ieee.org/author/145426988909344" target="_blank" style="color:var(--accent);font-weight:600;">IEEE Xplore</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+        <section id="projects">
+            <div class="container">
+                <h1 class="section-title">Academic Projects</h1>
+                <p class="section-subtitle">Showcasing my key project work</p>
+
+                <div class="card">
+                    <h2>Employee Salary Data Analysis</h2>
+                    <p><strong>Tools:</strong> R, R Markdown, Exploratory Data Analysis | <strong>Year:</strong> 2026</p>
+                    <p>Carried a <strong>1-million row</strong> employee salary dataset through the full data-science lifecycle.</p>
+                    <ul>
+                        <li>Applied problem framing, exploratory data analysis, preprocessing, and feature engineering</li>
+                        <li>Documented findings using R Markdown with clear, reproducible methodology</li>
+                        <li>Showcased ability to transform raw data into actionable business insights</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Comparative Study of Transformer Models for AI-Text Detection</h2>
+                    <p><strong>Tools:</strong> Python, PyTorch, HuggingFace Transformers, Google Colab | <strong>Year:</strong> 2026</p>
+                    <p>Engineered an NLP pipeline benchmarking <strong>seven transformer architectures</strong> plus RoBERTa for AI-generated text detection.</p>
+                    <ul>
+                        <li>Benchmarked: BERT, DistilBERT, ALBERT, ELECTRA, MiniLM, MobileBERT, XLNet, RoBERTa</li>
+                        <li>Designed comprehensive evaluation framework comparing model performance across multiple metrics</li>
+                        <li>Produced professional visualizations and an ablation study analyzing model behavior</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Signal Analysis in MATLAB</h2>
+                    <p><strong>Tools:</strong> MATLAB, Signal Processing | <strong>Year:</strong> 2026</p>
+                    <p>Performed composite sinusoid generation, FFT spectrum analysis, and uniform quantization using ID-derived signal parameters.</p>
+                    <ul>
+                        <li>Applied FFT spectrum analysis for frequency domain understanding</li>
+                        <li>Implemented uniform quantization techniques</li>
+                        <li>Demonstrated strong theoretical grounding in signal processing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+        <section id="skills">
+            <div class="container">
+                <h1 class="section-title">Skills & Competencies</h1>
+                <p class="section-subtitle">Technical and professional skills</p>
+
+                <div class="card">
+                    <h2>Technical Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-cat">
+                            <h3>ML/DL Frameworks</h3>
+                            <ul><li>PyTorch</li><li>HuggingFace Transformers</li><li>scikit-learn</li><li>TensorFlow</li></ul>
+                        </div>
+                        <div class="skill-cat">
+                            <h3>NLP & LLMs</h3>
+                            <ul><li>Text Classification</li><li>Entity Extraction</li><li>Semantic Similarity</li><li>Transformer Architectures</li><li>Prompt Engineering</li></ul>
+                        </div>
+                        <div class="skill-cat">
+                            <h3>Programming</h3>
+                            <ul><li>Python</li><li>R</li><li>SQL</li><li>Latex</li><li>Java</li><li>JavaScript</li><li>MATLAB</li></ul>
+                        </div>
+                        <div class="skill-cat">
+                            <h3>Data Science</h3>
+                            <ul><li>Exploratory Data Analysis</li><li>Feature Engineering</li><li>Data Preprocessing</li><li>Model Evaluation</li><li>Probabilistic Modeling</li></ul>
+                        </div>
+                        <div class="skill-cat">
+                            <h3>Visualization</h3>
+                            <ul><li>Power BI</li><li>Tableau</li><li>Matplotlib</li><li>Seaborn</li><li>R Markdown</li></ul>
+                        </div>
+                        <div class="skill-cat">
+                            <h3>Web Development</h3>
+                            <ul><li>React.js</li><li>Node.js</li><li>HTML/CSS</li></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Transferable Skills</h2>
+                    <ul>
+                        <li><strong>Research & Analysis:</strong> Co-authored 8 research publications; conducted systematic experiments and evaluations</li>
+                        <li><strong>Problem-Solving:</strong> Participated in ICPC; solved algorithmic challenges in research and coursework</li>
+                        <li><strong>Technical Communication:</strong> Published in peer-reviewed conferences and journals; documented complex technical concepts</li>
+                        <li><strong>Team Collaboration:</strong> Collaborated with co-authors on research papers; worked on team projects</li>
+                        <li><strong>Project Management:</strong> Managed research projects from conception to publication; met deadlines and deliverables</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ACHIEVEMENTS ===== -->
+        <section id="achievements">
+            <div class="container">
+                <h1 class="section-title">Achievements</h1>
+                <p class="section-subtitle">Recognitions and accomplishments</p>
+
+                <div class="card">
+                    <h2>🏆 Dean's List / Academic Excellence</h2>
+                    <p>Consistent high academic achievement with CGPA of <strong>3.86/4.00</strong> at American International University-Bangladesh (AIUB).</p>
+                </div>
+
+                <div class="card">
+                    <h2>📚 Published Researcher</h2>
+                    <ul>
+                        <li><strong>3</strong> peer-reviewed conference papers presented at IEEE QPAIN 2026</li>
+                        <li><strong>2</strong> journal papers accepted for publication in <strong>Nature Springer</strong> and <strong>Elsevier</strong> (Awaiting Publication)</li>
+                        <li><strong>3</strong> conference papers submitted to ICCA 2026 (Under Review)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>💻 ICPC Participant</h2>
+                    <p>Participated in the <strong>International Collegiate Programming Contest (ICPC)</strong>, demonstrating strong problem-solving and algorithmic skills.</p>
+                </div>
+
+                <div class="card">
+                    <h2>🧠 AI/ML Enthusiast</h2>
+                    <p>Active engagement with cutting-edge NLP and deep learning research through academic projects and publications.</p>
+                </div>
+
+                <div class="card">
+                    <h2>✍️ Technical Communicator</h2>
+                    <p>Experience documenting complex technical concepts in formal research papers published in peer-reviewed venues.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ACTIVITIES ===== -->
+        <section id="activities">
+            <div class="container">
+                <h1 class="section-title">Extra-Curricular Activities</h1>
+                <p class="section-subtitle">Beyond academics</p>
+
+                <div class="card">
+                    <div class="act-item">
+                        <div class="act-title">Research Assistant (RA)</div>
+                        <div class="act-detail">UCHRG Lab, American International University-Bangladesh (AIUB) — Working under Dr. Kamruddin Nur</div>
+                    </div>
+                    <div class="act-item">
+                        <div class="act-title">Active Member</div>
+                        <div class="act-detail">Computer Club, American International University-Bangladesh (AIUB)</div>
+                    </div>
+                    <div class="act-item">
+                        <div class="act-title">Participant</div>
+                        <div class="act-detail">Socio-economic festival focused on cultivating next-generation leadership</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== INTERESTS ===== -->
+        <section id="interests">
+            <div class="container">
+                <h1 class="section-title">Interests & Hobbies</h1>
+                <p class="section-subtitle">What I enjoy outside of work</p>
+
+                <div class="card">
+                    <div class="interests-grid">
+                        <div class="interest-item">
+                            <div class="icon">💻</div>
+                            <div class="name">Programming & Problem Solving</div>
+                        </div>
+                        <div class="interest-item">
+                            <div class="icon">🎬</div>
+                            <div class="name">Video Editing</div>
+                        </div>
+                        <div class="interest-item">
+                            <div class="icon">📚</div>
+                            <div class="name">Reading Comics</div>
+                        </div>
+                        <div class="interest-item">
+                            <div class="icon">🎨</div>
+                            <div class="name">Graphics Design</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact">
+            <div class="container">
+                <h1 class="section-title">Contact</h1>
+                <p class="section-subtitle">Let's connect</p>
+
+                <div class="card">
+                    <h2>Get in Touch</h2>
+                    <p style="color:var(--text-light);margin-bottom:18px;">
+                        Whether you have questions about my research, want to discuss potential opportunities,
+                        or simply want to connect, feel free to reach out.
+                    </p>
+
+                    <div class="contact-grid">
+                        <div>
+                            <div class="contact-item">
+                                <div class="icon">📧</div>
+                                <div>
+                                    <div class="label">Email</div>
+                                    <div class="value">tousiftarik02@gmail.com</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">📞</div>
+                                <div>
+                                    <div class="label">Phone</div>
+                                    <div class="value">+880 1976-899520</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">📍</div>
+                                <div>
+                                    <div class="label">Location</div>
+                                    <div class="value">Dhaka, Bangladesh</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="contact-item">
+                                <div class="icon">🔗</div>
+                                <div>
+                                    <div class="label">ResearchGate</div>
+                                    <div class="value"><a href="https://www.researchgate.net/profile/Tousif-Tarik" target="_blank" style="color:var(--accent);">View Profile</a></div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">🔗</div>
+                                <div>
+                                    <div class="label">Google Scholar</div>
+                                    <div class="value"><a href="https://scholar.google.com/citations?user=Ze5zeEYAAAAJ" target="_blank" style="color:var(--accent);">View Profile</a></div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">🔗</div>
+                                <div>
+                                    <div class="label">IEEE Xplore</div>
+                                    <div class="value"><a href="https://ieeexplore.ieee.org/author/145426988909344" target="_blank" style="color:var(--accent);">View Profile</a></div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">🔗</div>
+                                <div>
+                                    <div class="label">LinkedIn</div>
+                                    <div class="value"><a href="#" style="color:var(--accent);">Connect with Me</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>References</h2>
+                    <div class="ref">
+                        <div class="name">Dr. Kamruddin Md. Nur</div>
+                        <div class="designation">Professor, Department of Computer Science</div>
+                        <div class="designation">American International University-Bangladesh (AIUB)</div>
+                        <div class="email">Email: kamruddin@aiub.edu</div>
+                        <div style="font-size:13px;color:var(--text-light);">Research Interest: Deep Learning, Artificial Intelligence, Computer Vision, Robotics</div>
+                    </div>
+                    <div class="ref">
+                        <div class="name">Dr. Muhammad Firoz Mridha</div>
+                        <div class="designation">Professor & Head (Undergraduate Program), Department of Computer Science</div>
+                        <div class="designation">American International University-Bangladesh (AIUB)</div>
+                        <div class="email">Email: firoz.mridha@aiub.edu</div>
+                        <div style="font-size:13px;color:var(--text-light);">Research Interest: Deep Learning, NLP, Machine Learning, Large Language Models</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tousif Tarik. All rights reserved.</p>
+            <p style="font-size:13px;margin-top:4px;">
+                📧 <a href="mailto:tousiftarik02@gmail.com">tousiftarik02@gmail.com</a> |
+                📞 +880 1976-899520
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.getElementById('navbar');
+
+        hamburger.addEventListener('click', function() {
+            navbar.classList.toggle('open');
+        });
+
+        document.querySelectorAll('#navbar a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                navbar.classList.remove('open');
+
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetSection.offsetTop - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
